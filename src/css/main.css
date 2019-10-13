@@ -1,0 +1,266 @@
+body {
+	margin: 0px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.home-background {
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -2;
+	background: url(../image/3.jpg) no-repeat center;
+	background-size: cover;
+}
+
+.home-background::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=====HEADER=====*/
+/*===========================================================================================*/
+
+.header {
+	width: 1140px;
+	margin: auto;
+	margin-top: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.logo_and_phone {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.header-logo {
+	position: relative;
+}
+.header-logo > p {
+	font-size: 25px;
+	margin-left: 30px;
+	margin-top: 15px;
+	color: white;
+}
+.letter_y {
+	font-size: 47px;
+	position: absolute;
+	color: #9a9995;
+	font-family: sans-serif;
+	font-weight: lighter;
+}
+.letter_b {
+	font-size: 32px;
+	position: absolute;
+	top: 18px;
+	left: 3px;
+	color: #9a9995;
+	font-family: sans-serif;
+	font-weight: lighter;
+}
+.logo_title_son {
+	font-weight: 300;
+	font-size: 20px;
+}
+
+
+
+.header-phone_number {
+	margin-left: 90px;
+	font-size: 13px;
+}
+.header-phone_number > a {
+	text-decoration: none;
+	color: white;
+	font-weight: 600;
+}
+.phone > span {
+	margin: 0px 4px;
+	color: #e59b37;
+}
+
+
+
+.header-menu {
+	order: 1;
+	justify-content: flex-end;
+}
+.menu-list {
+	font-size: 13px;
+	list-style: none;
+	display: flex;
+	margin: 22px 0px 0px 0px;
+	padding: 0px;
+	height: 40px;
+}
+.menu-list a {
+	text-decoration: none;
+	color: white;
+}
+.menu-list li {
+	margin: 0px 0px 0px 15px;
+}
+.menu-list a:hover {
+	color: #e59b37 !important;
+}
+.icon_for_active-home, .icon_for_active-about, .icon_for_active-competenses, .icon_for_active-portfolio, .icon_for_active-contact_me, .icon_for_active-testimonials, .icon_for_active-blog {
+	display: none;
+	text-align: center;
+	margin-top: 6px;
+	color: #e59b37;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=====MAIN-HOME=====*/
+/*===========================================================================================*/
+.main-home {
+	margin-top: 130px;
+}
+
+.home_img img {
+	width: 540px;
+}
+
+.home_content-text {
+	color: white;
+	text-align: center;
+}
+
+.content-text__img {
+	position: relative;
+}
+
+.contennt-text__img > p {
+	font-size: 16px;
+	font-weight: 700;
+	color: #333333;
+	position: absolute;
+	left: 230px;
+	top: -10px;
+
+}
+
+.home_content-text > h2 {
+	font-size: 60px;
+	font-weight: 700;
+	color: #fefefe;
+	margin: 0px;
+}
+
+.home_content-text > h3 {
+	font-family: "Open Sans - Semibold";
+	font-size: 20px;
+	font-weight: 400;
+	color: #fefefe;
+	margin: 30px 0px;
+}
+
+.home_content-text > p {
+	display: block;
+	width: 400px;
+	margin: 0px auto;
+	font-family: "Open Sans";
+	font-size: 16px;
+}
+
+.home_content-text > p > a {
+	text-decoration: none;
+	color: #e59b37;
+}
+
+.home_content-text > a {
+	display: block;
+	width: 160px;
+	height: 40px;
+	padding: 10px 0px;
+	margin: 60px auto 0px auto;
+	border: 1px solid #e59b37;
+	border-radius: 7px;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 700;
+	color: #e59b37;
+}
+
+.home_content-text > a:hover {
+	background: #e59b37 !important;
+	color: #fefefe;
+}
+
+.home_content-text > a > span {
+	margin-left: 7px;
+	font-weight: 400;
+}
