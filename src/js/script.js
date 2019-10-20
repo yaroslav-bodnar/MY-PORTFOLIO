@@ -58,6 +58,23 @@ $(document).ready(function(){
 
 
 	// ---
+	$('.li_for_video').on('click', function(){
+		$('.li_for_video a').attr('style', 'color: #e59b37');
+		$('.icon_for_active-video').attr('style', 'display: block')
+	});
+
+	$(document).mouseup(function (e){
+		var liForvideo = $(".li_for_video");
+		if (!liForvideo.is(e.target)
+			&& liForvideo.has(e.target).length === 0) {
+				$('.li_for_video a').attr('style', 'color: white');
+				$('.icon_for_active-video').attr('style', 'display: none')
+		}
+	});
+
+
+
+	// ---
 	$('.li_for_portfolio').on('click', function(){
 		$('.li_for_portfolio a').attr('style', 'color: #e59b37');
 		$('.icon_for_active-portfolio').attr('style', 'display: block')
@@ -146,6 +163,141 @@ $(document).ready(function(){
 		$('.li_for_blog a').attr('style', 'color: white');
 		$('.icon_for_active-blog').attr('style', 'display: none')
 	});
+
+	// end style active menu====================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// style fon "a" - scroll
+
+
+	$("#menu").on("click","a", function (event) {
+
+		//отменяем стандартную обработку нажатия по ссылке
+		event.preventDefault();
+
+		//забираем идентификатор бока с атрибута href
+		var id  = $(this).attr('href'),
+
+		//узнаем высоту от начала страницы до блока на который ссылается якорь
+		top = $(id).offset().top;
+
+		//анимируем переход на расстояние - top за 1500 мс
+		$('body,html').animate({scrollTop: top}, 1500);
+
+	});
+
+
+	$(".for_scroll_on_document").on('click', function(event) {
+		event.preventDefault();
+
+		var id2 = $(this).attr('href'),
+		top2 = $(id2).offset().top;
+		$('body, html').animate({scrollTop: top2}, 1500);
+	});
+
+
+// end style fon "a" - scroll
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// validation for form
+
+var mainForm = document.getElementById('form');
+var nameInput = document.getElementById('form_name');
+var mailInput = document.getElementById('form_mail');
+var telInput = document.getElementById('form_tel');
+var textInput = document.querySelector('textarea');
+
+nameInput.addEventListener('invalid', function (evt) {
+	if (nameInput.validity.tooShort) {
+		nameInput.setCustomValidity('Фамилия должна состоять минимум из 2-х символов');
+		nameInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else if (nameInput.validity.tooLong) {
+		nameInput.setCustomValidity('Фамилия не должна превышать 25-ть символов');
+	} else if (nameInput.validity.valueMissing) {
+		nameInput.setCustomValidity('Обязательное поле');
+		nameInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else {
+		nameInput.setAttribute('style', 'border-bottom: 3px solid #737373;');
+		nameInput.setCustomValidity(''); //не забыть сбросить значение поля, если это значение стало корректно
+	}
+});
+
+mailInput.addEventListener('invalid', function (evt) {
+	if (mailInput.validity.tooShort) {
+		mailInput.setCustomValidity('Email должен состоять минимум из 2-х символов');
+		mailInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else if (mailInput.validity.tooLong) {
+		mailInput.setCustomValidity('Email не должен превышать 25-ть символов');
+	} else if (mailInput.validity.valueMissing) {
+		mailInput.setCustomValidity('Обязательное поле');
+		mailInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else {
+		mailInput.setAttribute('style', 'border-bottom: 3px solid #737373;');
+		mailInput.setCustomValidity(''); //не забыть сбросить значение поля, если это значение стало корректно
+	}
+});
+
+telInput.addEventListener('invalid', function (evt) {
+	if (telInput.validity.patternMismatch) {
+		telInput.setCustomValidity('Телефон должен состоять минимум из 5-14 цифр');
+		telInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else if (telInput.validity.valueMissing) {
+		telInput.setCustomValidity('Обязательное поле');
+		telInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else {
+		telInput.setAttribute('style', 'border-bottom: 3px solid #737373;');
+		telInput.setCustomValidity(''); //не забыть сбросить значение поля, если это значение стало корректно
+	}
+});
+
+textInput.addEventListener('invalid', function (evt) {
+	if (textInput.validity.tooShort) {
+		textInput.setCustomValidity('Текст должен состоять минимум 10 символов');
+		textInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else if (textInput.validity.valueMissing) {
+		textInput.setCustomValidity('Напишите мне свой план');
+		textInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else {
+		textInput.setAttribute('style', 'border-bottom: 3px solid #737373;');
+		textInput.setCustomValidity(''); //не забыть сбросить значение поля, если это значение стало корректно
+	}
+});
+
+// end validation for form
+
+
+
+
+
+
+
 
 
 
@@ -256,6 +408,38 @@ $(document).ready(function(){
 			}
 	});
 
+	// end style animation for ability blocks in competenses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	// var scrollAboutTop = $('#about');
 	// var aboutPos = scrollAboutTop.offset().top;
@@ -275,28 +459,28 @@ $(document).ready(function(){
 
 
 
-	var whiteButton = $(".button_white");
-	var blackButton = $(".button_black");
-	var blockMainPortfolio = $(".main-portfolio");
-	var bootstrapPortfolioBlock = $(".bootstrap_container_for_portfolio");
-	var blockPortolioTopImageBefore = $(".portolio_top_image::before");
-	var portfolioTopImage = $(".portolio_top_image");
+	// var whiteButton = $(".button_white");
+	// var blackButton = $(".button_black");
+	// var blockMainPortfolio = $(".main-portfolio");
+	// var bootstrapPortfolioBlock = $(".bootstrap_container_for_portfolio");
+	// var blockPortolioTopImageBefore = $(".portolio_top_image::before");
+	// var portfolioTopImage = $(".portolio_top_image");
 
-	whiteButton.on('click', function(){
-		blockMainPortfolio.addClass('white_main-portfolio');
-		blockMainPortfolio.removeClass('main-portfolio');
-		bootstrapPortfolioBlock.addClass('white_bootstrap_container_for_portfolio');
-		bootstrapPortfolioBlock.removeClass('bootstrap_container_for_portfolio');
+	// whiteButton.on('click', function(){
+	// 	blockMainPortfolio.addClass('white_main-portfolio');
+	// 	blockMainPortfolio.removeClass('main-portfolio');
+	// 	bootstrapPortfolioBlock.addClass('white_bootstrap_container_for_portfolio');
+	// 	bootstrapPortfolioBlock.removeClass('bootstrap_container_for_portfolio');
 
-	}); 
+	// }); 
 
-	blackButton.on('click', function(){
-		blockMainPortfolio.addClass('main-portfolio');
-		blockMainPortfolio.removeClass('white_main-portfolio');
-		bootstrapPortfolioBlock.addClass('bootstrap_container_for_portfolio');
-		bootstrapPortfolioBlock.removeClass('white_bootstrap_container_for_portfolio');
+	// blackButton.on('click', function(){
+	// 	blockMainPortfolio.addClass('main-portfolio');
+	// 	blockMainPortfolio.removeClass('white_main-portfolio');
+	// 	bootstrapPortfolioBlock.addClass('bootstrap_container_for_portfolio');
+	// 	bootstrapPortfolioBlock.removeClass('white_bootstrap_container_for_portfolio');
 
-	});
+	// });
 
 });
 

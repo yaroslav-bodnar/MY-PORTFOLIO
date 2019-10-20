@@ -69,9 +69,18 @@ body {
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
+.icon-up-outline {
+	position: fixed;
+	color: #151515;
+	top: 90vh;
+	right: 40px;
+	font-size: 40px;
+}
 
-
-
+.icon-up-outline:hover {
+	color: #e59b37;
+	cursor: pointer;
+}
 
 
 
@@ -207,7 +216,7 @@ body {
 .menu-list a:hover {
 	color: #e59b37 !important;
 }
-.icon_for_active-home, .icon_for_active-about, .icon_for_active-competenses, .icon_for_active-portfolio, .icon_for_active-contact_me, .icon_for_active-testimonials, .icon_for_active-blog {
+.icon_for_active-home, .icon_for_active-about, .icon_for_active-competenses, .icon_for_active-video, .icon_for_active-portfolio, .icon_for_active-contact_me, .icon_for_active-testimonials, .icon_for_active-blog {
 	display: none;
 	text-align: center;
 	margin-top: 6px;
@@ -443,7 +452,7 @@ body {
 	line-height: 24px;
 }
 
-.decorative_title_cv {
+.about_decorative_title_cv {
 	margin: 0px;
 	opacity: 0.2;
 	color: #fefefe;
@@ -822,7 +831,7 @@ body {
 }
 
 .bootstrap_container_for_competenses {
-	padding: 100px 0px;
+	padding: 400px 0px 0px 0px;
 	background: #151515;
 }
 
@@ -1338,6 +1347,117 @@ body {
 
 
 
+
+
+
+
+/*=====MAIN-VIDEO=====*/
+/*===========================================================================================*/
+.main-video {
+	width: 100%;
+	color: white;
+	position: relative;
+	background: #333333;
+	opacity: 0.9;
+}
+
+
+.bootstrap_container_for_video {
+	padding: 400px 0px 0px 0px;
+	background: #151515;
+}
+
+
+.video_decorative_title {
+	margin: 0px;
+	position: absolute;
+	top: 290px;
+	left: -184px;
+	opacity: 0.2;
+	color: #fefefe;
+	font-size: 100px;
+	font-weight: 700;
+	transform: rotate(270deg);
+}
+
+.video_title_wow_animate {
+	position: absolute;
+}
+
+.video_top_title {
+	color: #fefefe;
+	font-size: 32px;
+	font-weight: 700;
+	margin: 80px 0px 0px 0px;
+}
+
+.video_top_title > span {
+	color: #e59b37;
+	font-size: 15px;
+}
+
+.video_top_dsc {
+	color: #b2b2b2;
+	font-family: "Open Sans";
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	margin: 10px 0px 50px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+/*===== / MAIN-VIDEO=====*/
+/*===========================================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*=====MAIN-PORTFOLIO=====*/
 /*===========================================================================================*/
 .main-portfolio {
@@ -1357,7 +1477,7 @@ body {
 }
 
 .bootstrap_container_for_portfolio {
-	padding-bottom: 100px;
+	padding: 400px 0px 0px 0px;
 	background: #151515;
 	/*background: #404040;*/
 }
@@ -1377,7 +1497,7 @@ body {
 }
 
 
-.portolio_top_image::before {
+/*.portolio_top_image::before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -1386,7 +1506,7 @@ body {
 	width: 100%;
 	height: 50px;
 	background-color: rgba(30, 30, 30, 0.7);
-}
+}*/
 
 
 .portfolio_decorative_title {
@@ -1401,7 +1521,7 @@ body {
 	transform: rotate(270deg);
 }
 
-.potfolio_title_wow_animate {
+.portfolio_title_wow_animate {
 	position: absolute;
 }
 
@@ -1617,14 +1737,13 @@ body {
 	width: 100%;
 	color: white;
 	position: relative;
-	/*background: #333333;*/
-	background: #F8F8FF;
+	background: #333333;
 	opacity: 0.9;
 }
 
 
 .bootstrap_container_for_contact_me {
-	padding-bottom: 100px;
+	padding: 400px 0px 100px 0px;
 	background: #151515;
 }
 
@@ -1636,7 +1755,7 @@ body {
 	opacity: 0.9
 }
 
-.contact_me_top-image::after {
+/*.contact_me_top-image::after {
 	content: '';
 	display: block;
 	height: 50px;
@@ -1646,6 +1765,168 @@ body {
 	left: 0;
 	right: 0;
 	background: rgba(30, 30, 30, 0.7);
+}*/
+
+
+.contact-me_decorative_title {
+	margin: 0px;
+	position: absolute;
+	top: 400px;
+	left: -350px;
+	opacity: 0.2;
+	color: #fefefe;
+	font-size: 100px;
+	font-weight: 700;
+	transform: rotate(270deg);
+}
+
+.contact-me_title_wow_animate {
+	position: absolute;
+}
+
+
+.contact-me_top_title {
+	color: #fefefe;
+	font-size: 32px;
+	font-weight: 700;
+	margin: 80px 0px 0px 0px;
+}
+
+.contact-me_top_title > span {
+	color: #e59b37;
+	font-size: 15px;
+}
+
+.contact-me_top_dsc {
+	color: #b2b2b2;
+	font-family: "Open Sans";
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	margin: 10px 0px 0px 0px;
+}
+
+.form {
+	width: 100%;
+}
+
+.contact_me_form {
+	padding: 0px 30px;
+	position: relative;
+	z-index: 2;
+}
+
+.contact-me_block_for_inputs {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 0px 10px 0px;
+}
+
+.contact-me_block_for_inputs input {
+	height: 60px;
+	width: 30%;
+	background: #343434;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 3px solid #737373;
+	color: #b2b2b2;
+	font-size: 16px;
+	font-weight: 400;
+	padding-left: 20px;
+	font-family: sans-serif;
+	outline: none;
+}
+
+.contact-me_block_for_inputs input:focus {
+	border-top: 1px solid #e59b37;
+	border-left: 1px solid #e59b37;
+	border-right: 1px solid #e59b37;
+}
+
+.contact-me_block_for_texarea {
+	padding: 0px 0px 30px 0px;
+}
+
+textarea {
+	width: 100%;
+	background: #343434;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 3px solid #737373;
+	font-family: sans-serif;
+	color: #b2b2b2;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 20px 0px 0px 20px;
+	outline: none;
+}
+
+textarea:focus {
+	border: 1px solid #e59b37;
+}
+
+.contact-me_button_submit {
+	width: 120px;
+	height: 40px;
+	border: 1px solid #e59b37;
+	border-radius: 7px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #e59b37;
+	text-transform: uppercase;
+	background: transparent;
+}
+
+.contact-me_block_for_buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.contact-me_block_for_buttons_text {
+	color: #b2b2b2;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	padding-left: 20px;
+}
+
+.contact-me_button_down_cv {
+	width: 178px;
+	height: 40px;
+	border: 1px solid #e59b37;
+	border-radius: 7px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #e59b37;
+	text-transform: uppercase;
+	background: transparent;
+}
+
+.contact-me_decorative_title_cv {
+	position: absolute;
+	z-index: -1;
+	bottom: -150px;
+	right: 50px;
+	opacity: 0.2;
+	color: #fefefe;
+	font-size: 90px;
+	font-weight: 700;
+}
+
+.contact-me_button_submit:hover {
+	background: #e59b37 !important;
+	color: #fefefe;
+	cursor: pointer;
+}
+
+.contact-me_button_down_cv:hover {
+	background: #e59b37 !important;
+	color: #fefefe;
+	cursor: pointer;
 }
 
 /*===== / MAIN-CONTACT-ME=====*/

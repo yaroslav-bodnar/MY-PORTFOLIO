@@ -63,7 +63,7 @@
 		</div>
 
 		<div class="header-menu">
-			<ul class="menu-list">
+			<ul class="menu-list" id="menu">
 				<li class="li_for_home"><a href="#home">Home</a>
 					<span class="icon-ellipsis-vert icon_for_active-home"></span>
 				</li>
@@ -73,17 +73,20 @@
 				<li class="li_for_competenses"><a href="#competenses">Competenses</a>
 					<span class="icon-ellipsis-vert icon_for_active-competenses"></span>
 				</li>
+				<li class="li_for_video"><a href="#video">Video</a>
+					<span class="icon-ellipsis-vert icon_for_active-video"></span>
+				</li>
 				<li class="li_for_portfolio"><a href="#portfolio">Portfolio</a>
 					<span class="icon-ellipsis-vert icon_for_active-portfolio"></span>
-				</li>
-				<li class="li_for_contact_me"><a href="#contact_me">Contact me</a>
-					<span class="icon-ellipsis-vert icon_for_active-contact_me"></span>
 				</li>
 				<li class="li_for_testimonials"><a href="#testimonials">Testimonials</a>
 					<span class="icon-ellipsis-vert icon_for_active-testimonials"></span>
 				</li>
 				<li class="li_for_blog"><a href="#blog">Blog</a>
 					<span class="icon-ellipsis-vert icon_for_active-blog"></span>
+				</li>
+				<li class="li_for_contact_me"><a href="#contact_me">Contact me</a>
+					<span class="icon-ellipsis-vert icon_for_active-contact_me"></span>
 				</li>
 			</ul>
 		</div>
@@ -106,8 +109,8 @@
 						</div>
 						<h2>Yaroslav Bodnar</h2>
 						<h3>FrontEnd developer</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni accusamus, expedita praesentium id odio. Qui nostrum reiciendis, totam doloremque labore.<a href="#about">&nbsp;&nbsp;read more...</a></p>
-						<a class="wow heartBeat" data-wow-delay="3s" href="#contact_me">CONTACT ME<span class="icon-arrow"></span></a>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni accusamus, expedita praesentium id odio. Qui nostrum reiciendis, totam doloremque labore.<a class="for_scroll_on_document" href="#about">&nbsp;&nbsp;read more...</a></p>
+						<a class="wow heartBeat for_scroll_on_document" data-wow-delay="3s" href="#contact_me">CONTACT ME<span class="icon-arrow"></span></a>
 					</div>
 				</div>
 			</div>
@@ -118,7 +121,7 @@
 
 
 
-		<section class="main-about" id="about" id="mama">
+		<section class="main-about" id="about">
 			<div class="about-background-top"></div>
 
 			<div class="about-content">
@@ -136,7 +139,7 @@
 							<h3 class="about_title_compet">FrontEnd developer</h3>
 						</div>
 						<div class="col-6">
-							<p class="decorative_title_cv">Personal CV</p>
+							<p class="about_decorative_title_cv">Personal CV</p>
 							<button class="button_down_cv">download cv<span class="icon-inbox"></span></button>
 						</div>
 						<div class="col-12">
@@ -211,7 +214,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="about-map"></div>
+			<!-- <div class="about-map"></div> -->
 		</section>
 	
 
@@ -471,14 +474,59 @@
 
 
 
+
+		<section class="main-video" id="video">
+			<div class="container bootstrap_container_for_video">
+				<div class="row">
+					<div class="col-12">
+						<div class="video_title_wow_animate wow zoomInLeft" data-wow-duration="2s">
+							<p class="video_decorative_title">Video</p>
+						</div>
+						<p class="video_top_title"><span class="icon-ellipsis-vert"></span>Video</p>
+						<p class="video_top_dsc">My Video</p>
+					</div>
+					<div class="col-12">
+						<iframe width="100%" height="315" src="https://www.youtube.com/embed/NpXpcxOGD1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<section class="main-portfolio" id="portfolio">
-			<div class="portolio_top_image"></div>
+			<!-- <div class="portolio_top_image"></div> -->
+			
 
 
 			<div class="container bootstrap_container_for_portfolio">
+				<!-- <div class="portolio_top_image"></div> -->
 				<div class="row">
 					<div class="col-12 portfolio_top_text-content">
-					<div class="potfolio_title_wow_animate wow zoomInLeft" data-wow-duration="2s">
+					<div class="portfolio_title_wow_animate wow zoomInLeft" data-wow-duration="2s">
 						<p class="portfolio_decorative_title">Portfolio</p>
 					</div>
 						<div class="portfolio_top_text_title-and-dsc">
@@ -640,18 +688,41 @@
 
 
 		<section class="main_contact_me" id="contact_me">
-			<div class="contact_me_top-image"></div>
+			<!-- <div class="contact_me_top-image"></div> -->
 
 			<div class="container bootstrap_container_for_contact_me">
+				<!-- <div class="contact_me_top-image"></div> -->
+
 				<div class="row">
 					<div class="col-12 contact_me_title-and-dsc">
-						<p><span></span></p>
-						<p></p>
+						<div class="contact-me_title_wow_animate wow zoomInLeft" data-wow-duration="2s">
+							<p class="contact-me_decorative_title">Contact_Me</p>
+						</div>
+						<p class="contact-me_top_title"><span class="icon-ellipsis-vert"></span>Contact Me</p>
+						<p class="contact-me_top_dsc">Write me your plans or projects to help you.</p>
 					</div>
 					<div class="col-12 contact_me_form">
-						<form action="#">
-							<input type="text" placeholder="*Full name">
+						<form id="form" class="form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+							<p class="contact-me_block_for_inputs">
+								<input type="text" placeholder="* Full name" required name="name" id="form_name" minlength="2" maxlength="25">
+								<input type="email" placeholder="* Add Email" required name="mail" id="form_mail" minlength="2" maxlength="25">
+								<input type="tel" placeholder="* Phones" required name="tel" id="form_tel" pattern="\+[0-9]{5,14}|[0-9]{5,14}">
+							</p>
+							<p class="contact-me_block_for_texarea">
+								<textarea name="text_users" id="text_of_client" rows="15" placeholder="* Tell me your plans" required name="text" id="form_text" minlength="10"></textarea>
+							</p>
+							<div class="contact-me_block_for_buttons">
+								<p>
+									<input type="submit" class="contact-me_button_submit" value="Submit">
+									<span class="contact-me_block_for_buttons_text">Fields marked with a * are required</span>
+								</p>
+								<p>
+									<button class="contact-me_button_down_cv">download cv<span class="icon-inbox"></span></button>
+								</p>
+							</div>
 						</form>
+
+						<p class="contact-me_decorative_title_cv">Personal CV</p>
 					</div>
 				</div>
 			</div>
@@ -662,10 +733,20 @@
 
 
 
-<button class="button_white">White</button>
-<button class="button_black">Black</button>
 
 
+
+
+
+
+
+
+
+
+
+
+
+		<a class="for_scroll_on_document" href="#home"><p class="icon-up-outline"></p></a>
 	</main>
 
 
@@ -673,12 +754,8 @@
 
 
 
-
-
-
-
 	<footer>
-		
+		<div class="about-map"></div>
 	</footer>
 
 
@@ -686,25 +763,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<script src="./js/jquery-3.4.1.min.js"></script>
+
+	<!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> -->
 
 	<script src="./js/wow.min.js"></script>
 	<script src="./js/wow.script.js"></script>
