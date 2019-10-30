@@ -3,6 +3,51 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// / preloader ====================
+	$(window).on('load', function () {
+		var preloader = $('#preloader'),
+			preloaderContainer = preloader.find('.preloader_container');
+
+		setTimeout(function () { 
+			preloaderContainer.fadeOut();
+			preloader.delay(500).fadeOut('slow');
+		}, 2000);
+	});
+	// / preloader====================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	// style active menu====================
 	// ----
 
@@ -226,6 +271,86 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+
+	// MODAL - WINDOW
+
+	$(".modal").each( function(){
+		$(this).wrap('<div class="overlay"></div>')
+	});
+
+	$(".open-modal").on('click', function(e){
+		e.preventDefault();
+		e.stopImmediatePropagation;
+		
+		var $this = $(this),
+				modal = $($this).data("modal");
+		
+		$(modal).parents(".overlay").addClass("open");
+		setTimeout( function(){
+			$(modal).addClass("open");
+			$(".overlay").css({"z-index":"600"});
+			$(".modal").css({"z-index":"700"});
+			$("body").css({"overflow":"hidden"});
+		}, 350);
+		
+		$(document).on('click', function(e){
+			var target = $(e.target);
+			
+			if ($(target).hasClass("overlay")){
+				$(target).find(".modal").each( function(){
+					$(this).removeClass("open");
+					$("body").css({"overflow":"visible"});
+				});
+				setTimeout( function(){
+					$(target).removeClass("open");
+					$("body").css({"overflow":"visible"});
+				}, 350);
+			}
+			
+		});
+		
+	});
+
+	$(".close-modal").on('click', function(e){
+		e.preventDefault();
+		e.stopImmediatePropagation;
+		
+		var $this = $(this),
+				modal = $($this).data("modal");
+		
+		$(modal).removeClass("open");
+		setTimeout( function(){	
+			$(modal).parents(".overlay").removeClass("open");
+			$("body").css({"overflow":"visible"});
+		}, 350);
+		
+	});
+
+	// / MODAL - WINDOW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // validation for form
 
 var mainForm = document.getElementById('form');
@@ -233,6 +358,7 @@ var nameInput = document.getElementById('form_name');
 var mailInput = document.getElementById('form_mail');
 var telInput = document.getElementById('form_tel');
 var textInput = document.querySelector('textarea');
+
 
 nameInput.addEventListener('invalid', function (evt) {
 	if (nameInput.validity.tooShort) {
@@ -289,6 +415,79 @@ textInput.addEventListener('invalid', function (evt) {
 		textInput.setCustomValidity(''); //не забыть сбросить значение поля, если это значение стало корректно
 	}
 });
+
+
+
+
+
+
+
+
+
+
+var modalMainForm = document.getElementById('modal_form');
+var modalNameInput = document.getElementById('modal_form_name');
+var modalMailInput = document.getElementById('modal_form_mail');
+var modalTelInput = document.getElementById('modal_form_tel');
+var modalTextInput = document.getElementById('text_of_client');
+
+
+modalNameInput.addEventListener('invalid', function (evt) {
+	if (modalNameInput.validity.tooShort) {
+		modalNameInput.setCustomValidity('Фамилия должна состоять минимум из 2-х символов');
+		modalNameInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else if (modalNameInput.validity.tooLong) {
+		modalNameInput.setCustomValidity('Фамилия не должна превышать 25-ть символов');
+	} else if (modalNameInput.validity.valueMissing) {
+		modalNameInput.setCustomValidity('Обязательное поле');
+		modalNameInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else {
+		modalNameInput.setAttribute('style', 'border-bottom: 3px solid #737373;');
+		modalNameInput.setCustomValidity(''); //не забыть сбросить значение поля, если это значение стало корректно
+	}
+});
+
+modalMailInput.addEventListener('invalid', function (evt) {
+	if (modalMailInput.validity.tooShort) {
+		modalMailInput.setCustomValidity('Email должен состоять минимум из 2-х символов');
+		modalMailInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else if (modalMailInput.validity.tooLong) {
+		modalMailInput.setCustomValidity('Email не должен превышать 25-ть символов');
+	} else if (modalMailInput.validity.valueMissing) {
+		modalMailInput.setCustomValidity('Обязательное поле');
+		modalMailInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else {
+		modalMailInput.setAttribute('style', 'border-bottom: 3px solid #737373;');
+		modalMailInput.setCustomValidity(''); //не забыть сбросить значение поля, если это значение стало корректно
+	}
+});
+
+modalTelInput.addEventListener('invalid', function (evt) {
+	if (modalTelInput.validity.patternMismatch) {
+		modalTelInput.setCustomValidity('Телефон должен состоять минимум из 5-14 цифр');
+		modalTelInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else if (modalTelInput.validity.valueMissing) {
+		modalTelInput.setCustomValidity('Обязательное поле');
+		modalTelInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else {
+		modalTelInput.setAttribute('style', 'border-bottom: 3px solid #737373;');
+		modalTelInput.setCustomValidity(''); //не забыть сбросить значение поля, если это значение стало корректно
+	}
+});
+
+modalTextInput.addEventListener('invalid', function (evt) {
+	if (modalTextInput.validity.tooShort) {
+		modalTextInput.setCustomValidity('Текст должен состоять минимум 10 символов');
+		modalTextInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else if (modalTextInput.validity.valueMissing) {
+		modalTextInput.setCustomValidity('Напишите мне свой план');
+		modalTextInput.setAttribute('style', 'border-bottom: 3px solid red;');
+	} else {
+		modalTextInput.setAttribute('style', 'border-bottom: 3px solid #737373;');
+		modalTextInput.setCustomValidity(''); //не забыть сбросить значение поля, если это значение стало корректно
+	}
+});
+
 
 // end validation for form
 
@@ -412,75 +611,6 @@ textInput.addEventListener('invalid', function (evt) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// var scrollAboutTop = $('#about');
-	// var aboutPos = scrollAboutTop.offset().top;
-	// var winHeight = $(window).height();
-	// var scrollToAbout = aboutPos - winHeight;
-	// var firstHome = $(".home-background");
-	// var secondHome = $(".second_home-background");
-	// $(window).scroll(function() {
-
-	// 	var winScrollTop = $(this).scrollTop();
-	// 		if (winScrollTop > scrollToAbout) {
-	// 			secondHome.attr('style', 'display: block');
-	// 			firstHome.attr('style', 'display: none');
-	// 		}
-	// });
-
-
-
-
-	// var whiteButton = $(".button_white");
-	// var blackButton = $(".button_black");
-	// var blockMainPortfolio = $(".main-portfolio");
-	// var bootstrapPortfolioBlock = $(".bootstrap_container_for_portfolio");
-	// var blockPortolioTopImageBefore = $(".portolio_top_image::before");
-	// var portfolioTopImage = $(".portolio_top_image");
-
-	// whiteButton.on('click', function(){
-	// 	blockMainPortfolio.addClass('white_main-portfolio');
-	// 	blockMainPortfolio.removeClass('main-portfolio');
-	// 	bootstrapPortfolioBlock.addClass('white_bootstrap_container_for_portfolio');
-	// 	bootstrapPortfolioBlock.removeClass('bootstrap_container_for_portfolio');
-
-	// }); 
-
-	// blackButton.on('click', function(){
-	// 	blockMainPortfolio.addClass('main-portfolio');
-	// 	blockMainPortfolio.removeClass('white_main-portfolio');
-	// 	bootstrapPortfolioBlock.addClass('bootstrap_container_for_portfolio');
-	// 	bootstrapPortfolioBlock.removeClass('white_bootstrap_container_for_portfolio');
-
-	// });
 
 });
 
